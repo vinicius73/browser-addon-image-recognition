@@ -4,6 +4,8 @@ const run = (url) => {
   browser.sidebarAction.setPanel({
     panel: `${panelUrl}?image=${url}`,
   });
+
+  browser.sidebarAction.open();
 };
 // listen
 browser.contextMenus.create({
