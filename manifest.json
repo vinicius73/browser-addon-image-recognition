@@ -4,13 +4,18 @@
     "description": "Image recognition for any image",
     "version": "1.0",
     "homepage_url": "https://github.com/vinicius73",
-
+    "sidebar_action": {
+  		"default_icon": "images/icon.png",
+  		"default_title" : "Image recognition",
+  		"default_panel": "html/about.html"
+  	},
     "background": {
         "scripts": [
             "dist/background.js"
         ]
     },
     "permissions": [
+        "tabs",
         "notifications",
         "activeTab",
         "contextMenus",

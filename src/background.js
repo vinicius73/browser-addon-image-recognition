@@ -1,12 +1,11 @@
-const recognize = (url) => {
-  browser.notifications.create('image-recognition-notification', {
-    type: 'basic',
-    title: 'recognition data',
-    message: url,
+const panelUrl = browser.extension.getURL('html/panel.html');
+
+const run = (url) => {
+  browser.sidebarAction.setPanel({
+    panel: `${panelUrl}?image=${url}`,
   });
 };
-
-// listem
+// listen
 browser.contextMenus.create({
   id: 'image-recognition',
   title: 'See recognition data',
@@ -15,6 +14,6 @@ browser.contextMenus.create({
 
 browser.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === 'image-recognition') {
-    recognize(info.srcUrl);
+    run(info.srcUrl);
   }
 });
