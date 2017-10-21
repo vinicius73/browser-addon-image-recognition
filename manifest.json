@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "image-recognition",
+    "description": "Image recognition for any image",
+    "version": "1.0",
+    "homepage_url": "https://github.com/vinicius73",
+
+    "background": {
+        "scripts": [
+            "dist/background.js"
+        ]
+    },
+    "permissions": [
+        "notifications",
+        "activeTab",
+        "contextMenus",
+        "clipboardWrite"
+    ]
+}
