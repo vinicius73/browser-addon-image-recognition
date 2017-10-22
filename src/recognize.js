@@ -1,11 +1,21 @@
 import Clarifai from 'clarifai';
+import { isEmpty } from 'lodash';
 
-const app = new Clarifai.App({
-  apiKey: 'ebcc489500544ad7bce39169401dc82a',
-});
+const recognize = url => browser.storage.local.get()
+  .then((data) => {
+    const key = data.clarifai_api_key || '';
 
-const recognize = url => app
-  .models
-  .predict(Clarifai.GENERAL_MODEL, url);
+    if (isEmpty(key)) {
+      return Promise.reject(new Error('Missing API Key'));
+    }
+
+    const app = new Clarifai.App({
+      apiKey: key,
+    });
+
+    return app
+      .models
+      .predict(Clarifai.GENERAL_MODEL, url);
+  });
 
 export default recognize;

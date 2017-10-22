@@ -34,7 +34,11 @@ export default {
           this.imageData = get(result, 'outputs.0.data.concepts', {});
         })
         .catch (e => {
-          this.error = get(e, 'data.outputs.0.status.description', 'Sorry, deu bad!');
+          if (e instanceof Error) {
+            this.error = e.message;
+          } else {
+            this.error = get(e, 'data.outputs.0.status.description', 'Sorry, deu bad!');
+          }
           this.loading = false;
           console.error(e);
         })

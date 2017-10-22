@@ -7,7 +7,7 @@
     "sidebar_action": {
   		"default_icon": "images/icon.png",
   		"default_title" : "Image recognition",
-  		"default_panel": "html/about.html"
+  		"default_panel": "html/config.html"
   	},
     "background": {
         "scripts": [
@@ -16,6 +16,7 @@
     },
     "permissions": [
         "tabs",
+        "storage",
         "notifications",
         "activeTab",
         "contextMenus",
