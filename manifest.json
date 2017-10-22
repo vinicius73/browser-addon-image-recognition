@@ -1,12 +1,17 @@
 {
     "manifest_version": 2,
-    "name": "image-recognition",
+    "name": "Image Recognition",
     "description": "Image recognition for any image",
     "version": "1.0",
-    "homepage_url": "https://github.com/vinicius73",
+    "homepage_url": "https://github.com/vinicius73/browser-addon-image-recognition",
+    "icons": {
+      "48": "images/icon.png",
+      "96": "images/icon.png",
+      "256": "images/icon.png"
+    },
     "sidebar_action": {
   		"default_icon": "images/icon.png",
-  		"default_title" : "Image recognition",
+  		"default_title" : "Image Recognition",
   		"default_panel": "html/config.html"
   	},
     "background": {
@@ -17,9 +22,7 @@
     "permissions": [
         "tabs",
         "storage",
-        "notifications",
         "activeTab",
-        "contextMenus",
-        "clipboardWrite"
+        "contextMenus"
     ]
 }

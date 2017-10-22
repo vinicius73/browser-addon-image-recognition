@@ -1,5 +1,5 @@
 {
-  "name": "mozilla-addon-image-recognition",
+  "name": "browser-addon-image-recognition",
   "version": "1.0.0",
   "description": "Image recognition for any image",
   "main": "manifest.json",
@@ -29,7 +29,6 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
-    "bulma": "^0.6.0",
     "clarifai": "^2.4.0",
     "lodash": "^4.17.4",
     "vue": "^2.5.2"
