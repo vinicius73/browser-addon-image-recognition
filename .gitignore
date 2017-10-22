@@ -1,5 +1,6 @@
 dist/
-
+production/
+production*.zip
 
 # Logs
 logs
