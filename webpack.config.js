@@ -3,7 +3,8 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     background: './src/background.js',
-    panel: './src/panel/index.js',
+    'panel-recognition': './src/panel-recognition/index.js',
+    'panel-config': './src/panel-config/index.js',
   },
   output: {
     filename: '[name].js',
