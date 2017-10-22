@@ -22,7 +22,7 @@ export default {
         <tr v-for="item in data" :key="item.id">
           <td>{{ item.name }}</td>
           <td>
-            <progress class="progress" :value="item.value * 100" max="100">{{ item.value * 100 }}%</progress>
+            <progress class="progress" :value="item.value * 100" max="100" :title="`${item.value * 100}%`">{{ item.value * 100 }}%</progress>
           </td>
         </tr>
       </tbody>
