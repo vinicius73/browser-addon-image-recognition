@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="section">
     <div v-if="!hasImage">
       Waiting...
     </div>

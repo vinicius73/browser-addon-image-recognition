@@ -11,7 +11,7 @@ export default {
 
 <template>
   <div>
-    <table>
+    <table class="table is-striped is-fullwidth">
       <thead>
         <tr>
           <th>Name</th>
@@ -21,7 +21,9 @@ export default {
       <tbody>
         <tr v-for="item in data" :key="item.id">
           <td>{{ item.name }}</td>
-          <td>{{ item.value }}</td>
+          <td>
+            <progress class="progress" :value="item.value * 100" max="100">{{ item.value * 100 }}%</progress>
+          </td>
         </tr>
       </tbody>
     </table>

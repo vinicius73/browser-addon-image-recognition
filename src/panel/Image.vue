@@ -1,7 +1,7 @@
 <script>
 import recognize from '../recognize';
 import ImageData from './ImageData.vue';
-import { get } from 'lodash'
+import { get } from 'lodash';
 
 export default {
   components: { ImageData },
@@ -12,6 +12,7 @@ export default {
     return {
       loading: true,
       error: false,
+      debug: {},
       imageData: []
     }
   },
@@ -27,9 +28,10 @@ export default {
       this.imageData = {};
 
       recognize(this.url)
-        .then(({ outputs }) => {
+        .then(result => {
           this.loading = false;
-          this.imageData = get(outputs, '0.data.concepts', {});
+          this.debug = result;
+          this.imageData = get(result, 'outputs.0.data.concepts', {});
         })
         .catch (e => {
           this.error = get(e, 'data.outputs.0.status.description', 'Sorry, deu bad!');
@@ -48,7 +50,11 @@ export default {
   <div>
     <img :src="url">
     <p class="error" v-if="error">{{ error }}</p>
-    <p class="loading" v-if="loading">Loading...</p>
+    <div v-if="loading" class="has-text-centered has-text-info">
+      <span class="icon is-large">
+        <i class="fa fa-refresh fa-spin fa-3x"></i>
+      </span>
+    </div>
     <image-data :data="imageData" v-if="showData"></image-data>
   </div>
 </template>
